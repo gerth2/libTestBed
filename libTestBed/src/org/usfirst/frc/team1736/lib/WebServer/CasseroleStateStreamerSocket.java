@@ -9,7 +9,13 @@ import org.eclipse.jetty.websocket.api.WebSocketAdapter;
 
 import java.util.Timer;
 
-class CasseroleStateStreamerSocket extends WebSocketAdapter {
+/**
+ * DESCRIPTION:
+ * <br>
+ * Private socket definition class that Jetty wants me to make public even though it doesn't actually have to be. Don't use this for anything unless you know preciisely what you are doing.
+ */
+
+public class CasseroleStateStreamerSocket extends WebSocketAdapter {
 	private java.util.Timer updater = new java.util.Timer(); 
 	private int updatePeriodMS = 1000; //default update rate of 1s 
 	volatile int test_data;

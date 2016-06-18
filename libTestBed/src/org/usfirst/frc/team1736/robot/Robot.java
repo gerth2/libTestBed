@@ -45,9 +45,9 @@ public class Robot extends IterativeRobot {
     	accel = new BuiltInAccelerometer();
     	webserver = new CasseroleWebServer();
     	
-    	testCal1 = new Calibration("testCal1", 5.5, wrangler);
-    	testCal2 = new Calibration("testCal2", 105.2, wrangler);
-    	testCal3 = new Calibration("testCal3", -30.826, wrangler);
+    	testCal1 = new Calibration("testCal1", 5.5);
+    	testCal2 = new Calibration("testCal2", 105.2);
+    	testCal3 = new Calibration("testCal3", -30.826);
     	
     	CasseroleDriverView.newDial("SystemVoltage", 0.0, 14.0, 1);
     	CasseroleDriverView.newDial("AccelX(G)", -3, 3, 0.5);
@@ -57,11 +57,14 @@ public class Robot extends IterativeRobot {
     	
     	iter = 0;
     	
-    	CassesroleWebStates.setCalWrangler(wrangler);
+    	
     	webserver.startServer();
     	
     	
-    	
+    }
+    
+    public void disabledInit(){
+    	CalWrangler.loadCalValues();
     }
     
     public void disabledPeriodic(){
@@ -93,7 +96,7 @@ public class Robot extends IterativeRobot {
 	 * If using the SendableChooser make sure to add them to the chooser code above as well.
 	 */
     public void autonomousInit() {
-
+    	CalWrangler.loadCalValues();
     }
 
     /**
@@ -101,6 +104,10 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
 
+    }
+    
+    public void teleopInit() {
+    	CalWrangler.loadCalValues();
     }
 
     /**
