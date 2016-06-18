@@ -11,7 +11,7 @@ import org.eclipse.jetty.websocket.api.WebSocketAdapter;
 
 import java.util.Timer;
 
-public class CasseroleCalStreamerSocket extends WebSocketAdapter {
+class CasseroleCalStreamerSocket extends WebSocketAdapter {
 	volatile int test_data;
 	
 	

@@ -9,7 +9,7 @@ import org.eclipse.jetty.websocket.api.WebSocketAdapter;
 
 import java.util.Timer;
 
-public class CasseroleStateStreamerSocket extends WebSocketAdapter {
+class CasseroleStateStreamerSocket extends WebSocketAdapter {
 	private java.util.Timer updater = new java.util.Timer(); 
 	private int updatePeriodMS = 1000; //default update rate of 1s 
 	volatile int test_data;
